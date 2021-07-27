@@ -6,7 +6,7 @@ const mongoose=require('mongoose');
 require('dotenv').config();
 app.use(express.json());
 app.use(cors());
-const port=process.env.port;
+const PORT=process.env.PORT;
 const {
     home,
     getFavoriteCoffee,
@@ -26,6 +26,6 @@ app.post('/create',createItemController);
 app.put('/update/:id',updateItemController);
 app.delete('/delete/:id',deleteItemController);
 
-app.listen(port, ()=>{
-    console.log('listening to port 8000');
+app.listen(PORT, ()=>{
+    console.log(`listening to port ${PORT}` );
 });
